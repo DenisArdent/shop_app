@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/liked_nav_graph"
+    app:startDestination="@id/likedFragment">
+
+    <fragment
+        android:id="@+id/likedFragment"
+        android:name="com.denisardent.catalog.liked.LikedFragment"
+        android:label="Избранное" >
+        <action
+            android:id="@+id/action_likedFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.denisardent.product.ProductFragment"
+        android:label="" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>

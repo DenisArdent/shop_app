@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ProductFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/rating_bar"
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/product_image_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintDimensionRatio="0.95f"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <me.relex.circleindicator.CircleIndicator3
+            app:ci_drawable="@drawable/pink_dot_big"
+            app:ci_drawable_unselected="@drawable/grey_dot_big"
+
+            android:id="@+id/circle_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/product_image_view_pager"
+            app:layout_constraintStart_toStartOf="@id/product_image_view_pager"
+            app:layout_constraintEnd_toEndOf="@id/product_image_view_pager"/>
+
+        <TextView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="@dimen/title_1"
+            android:textColor="@color/grey"
+            tools:text = "A 'PIEU"
+            android:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_image_view_pager" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_title_1"
+            tools:text = "Пенка для умывания`A`PIEU` `DEEP CLEAN` 200 мл"
+            android:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brand" />
+
+        <TextView
+            android:id="@+id/available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/title_3"
+            tools:text = "Доступно для заказа 30 штук"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/available"
+            app:layout_constraintBottom_toTopOf="@id/rating_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="4.3"
+            android:isIndicator="true"
+            android:layout_marginTop="15dp"
+            android:progressDrawable="@drawable/custom_rating_bar_full"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/available" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/title_3"
+            tools:text = "4.3"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintStart_toEndOf="@id/rating_bar"
+            app:layout_constraintTop_toBottomOf="@id/available" />
+
+        <TextView
+            android:id="@+id/review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/title_3"
+            tools:text = "4 отзыва"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintStart_toEndOf="@id/rating"
+            app:layout_constraintTop_toBottomOf="@id/available" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/price_text"
+            tools:text = "549 Р"
+            android:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rating" />
+
+        <TextView
+            android:id="@+id/old_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:layout_marginStart="15dp"
+            android:textSize="@dimen/title_3"
+            tools:text = "899 Р"
+            android:fontFamily="@font/sf_pro_regular"
+            app:layout_constraintStart_toEndOf="@id/price"
+            app:layout_constraintTop_toTopOf="@id/price"
+            app:layout_constraintBottom_toBottomOf="@id/price"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="15dp"
+            app:cardBackgroundColor="@color/pink"
+
+            app:strokeColor="@color/white"
+            app:layout_constraintTop_toTopOf="@id/price"
+            app:layout_constraintBottom_toBottomOf="@id/price"
+            app:layout_constraintStart_toEndOf="@id/old_price"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded">
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/elements_text"
+                android:fontFamily="@font/sf_pro_regular"
+                android:paddingVertical="9dp"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/white"
+                tools:text="-00%" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_1"
+            android:text = "Описание"
+            android:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/price"/>
+
+        <LinearLayout
+            android:id="@+id/sizeable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_tv">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/shops_card"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardBackgroundColor="@color/light_grey"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="8dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
+                >
+
+                <TextView
+                    android:id="@+id/brand_button_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/sf_pro_medium"
+                    android:textSize="@dimen/title_2"
+                    tools:text="A 'PIEU"
+                    android:layout_marginStart="8dp"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_gravity="center|end"
+                    android:src="@drawable/ic_right_arrow"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_pro_regular"
+                android:textSize="@dimen/title_3"
+                tools:text="Пенка для лица Глубокое очищение содержит минеральную воду и соду, способствует глубокому очищению пор от различных загрязнений, контролирует работу сальных желез, сужает поры. Обладает мягким антисептическим действием, не пересушивая кожу. Минеральная вода тонизирует и смягчает кожу."
+                />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/expose_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Скрыть"
+            android:textSize="@dimen/title_3"
+            android:fontFamily="@font/sf_pro_medium"
+            android:textColor="@color/grey"
+            app:layout_constraintTop_toBottomOf="@id/sizeable_layout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/characteristics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_1"
+            android:text = "Характеристики"
+            android:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expose_button"/>
+
+
+        <TextView
+            android:id="@+id/characteristics_1_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "Артикул товара"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics"
+            />
+
+        <TextView
+            android:id="@+id/characteristics_1_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "133987"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/characteristics_1_start"
+            app:layout_constraintBottom_toBottomOf="@id/characteristics_1_start"
+            />
+
+        <View
+            android:id="@+id/characteristics_1_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_1_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/characteristics_2_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "Артикул товара"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_1_start"
+            />
+
+        <TextView
+            android:id="@+id/characteristics_2_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "133987"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/characteristics_2_start"
+            app:layout_constraintBottom_toBottomOf="@id/characteristics_2_start"
+            />
+
+        <View
+            android:id="@+id/characteristics_2_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_2_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/characteristics_3_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "Артикул товара"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_2_start"
+            />
+
+        <TextView
+            android:id="@+id/characteristics_3_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "133987"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/characteristics_3_start"
+            app:layout_constraintBottom_toBottomOf="@id/characteristics_3_start"
+            />
+
+        <View
+            android:id="@+id/characteristics_3_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_3_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/composition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_1"
+            android:text = "Состав"
+            android:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_3_divider"/>
+
+        <ImageView
+            android:id="@+id/copy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_copy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics_3_divider"
+            />
+
+        <TextView
+            android:id="@+id/composition_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text = "Water, Propylene Glycol, Dipropylene Glycol, Lauric acid, Myristic Acid, Potassium Hydroxide, Lauryl Hydroxysultaine, Potassium Cocoate, Potassium Cocoyl Glycinate, Sodium Chloride, Glycerin, Phenoxyethanol, Chlorphenesin, Fragrance, Caprylyl Glycol, Ethylhexylglycerin, Capric acid, Palmitic Acid, Disodium EDTA, Sodium Bicarbonate, Cocamidopropyl Betaine, Butylene Glycol."
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_regular"
+            android:textSize="@dimen/title_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/composition"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Добавить в корзину"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/composition_description"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

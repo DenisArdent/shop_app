@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="price_text">22sp</dimen>
+    <dimen name="large_title_1">20sp</dimen>
+    <dimen name="title_1">16sp</dimen>
+    <dimen name="title_2">14sp</dimen>
+    <dimen name="title_3">12sp</dimen>
+    <dimen name="caption">10sp</dimen>
+    <dimen name="elements_text">9sp</dimen>
+</resources>
