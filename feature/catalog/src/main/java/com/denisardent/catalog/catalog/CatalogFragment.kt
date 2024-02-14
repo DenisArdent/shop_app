@@ -1,4 +1,4 @@
-package com.denisardent.catalog
+package com.denisardent.catalog.catalog
 
 import android.os.Bundle
 import android.view.View
@@ -9,6 +9,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.denisardent.catalog.R
 import com.denisardent.catalog.adapterdelegates.buttons.ButtonDelegate
 import com.denisardent.catalog.adapterdelegates.products.ProductsListDelegate
 import com.denisardent.catalog.adapterdelegates.buttons.ButtonsHorizontalItem
@@ -16,7 +17,6 @@ import com.denisardent.common.Items.ProductItem
 import com.denisardent.catalog.adapterdelegates.products.ProductsVerticalItem
 import com.denisardent.catalog.databinding.FragmentCatalogBinding
 import com.denisardent.presentation.viewBinding
-import com.google.android.material.checkbox.MaterialCheckBox
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -28,7 +28,8 @@ class CatalogFragment: Fragment(R.layout.fragment_catalog) {
     private val adapter = ListDelegationAdapter(
         ProductsListDelegate.productsVerticalDelegate (
             {
-                findNavController().navigate(R.id.action_catalogFragment_to_productFragment, bundleOf(
+                findNavController().navigate(
+                    R.id.action_catalogFragment_to_productFragment, bundleOf(
                     Pair("id", it.product.id)
                 ))
             },

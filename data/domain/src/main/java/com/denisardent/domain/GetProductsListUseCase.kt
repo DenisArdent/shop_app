@@ -13,7 +13,6 @@ class GetProductsListUseCase @Inject constructor(
     suspend operator fun invoke(): List<Product>{
        val productsList = productsRepository.getProductsList().toMutableList()
         productsList.forEach {
-            Log.d("AAA", preferences.getLiked(it.id).toString())
             it.isLiked = preferences.getLiked(it.id)
         }
         return productsList

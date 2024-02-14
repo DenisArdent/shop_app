@@ -9,13 +9,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.denisardent.catalog.CatalogViewModel
 import com.denisardent.catalog.R
-import com.denisardent.catalog.adapterdelegates.buttons.ButtonDelegate
-import com.denisardent.catalog.adapterdelegates.buttons.ButtonsHorizontalItem
 import com.denisardent.catalog.adapterdelegates.products.ProductsListDelegate
 import com.denisardent.catalog.adapterdelegates.products.ProductsVerticalItem
-import com.denisardent.catalog.databinding.FragmentCatalogBinding
 import com.denisardent.catalog.databinding.FragmentLikedBinding
 import com.denisardent.common.Items.ProductItem
 import com.denisardent.presentation.viewBinding

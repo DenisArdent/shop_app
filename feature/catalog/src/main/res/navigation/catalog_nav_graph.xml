@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="com.denisardent.catalog.CatalogFragment"
+        android:name="com.denisardent.catalog.catalog.CatalogFragment"
         android:label="Каталог" >
         <action
             android:id="@+id/action_catalogFragment_to_productFragment"

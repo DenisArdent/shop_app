@@ -1,4 +1,4 @@
-package com.denisardent.catalog
+package com.denisardent.catalog.catalog
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

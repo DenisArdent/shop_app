@@ -2,6 +2,7 @@ package com.denisardent.local
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -34,17 +35,17 @@ class AccountProductSharedPref @Inject constructor(@ApplicationContext context: 
 
     override fun logout() {
         preferences.edit()
-            .putString(NAME, null)
-            .putString(SURNAME, null)
-            .putString(PHONE_NUMBER, null)
-            .apply()
+            .remove(NAME)
+            .remove(SURNAME)
+            .remove(PHONE_NUMBER)
     }
 
     override fun checkLogined(): Boolean {
-        if (preferences.getString(NAME, null) == null){
-            return false
+        return if (preferences.getString(NAME, null) == null){
+            false
         } else {
-            return true
+            Log.d("AAA", "logginned")
+            true
         }
     }
 
