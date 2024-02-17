@@ -2,24 +2,18 @@ package com.denisardent.authorization
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.denisardent.authorization.databinding.FragmentAuthorizationBinding
-import com.denisardent.common.isCyrillic
 import com.denisardent.common.validateField
-import com.denisardent.domain.CheckLoggedUseCase
-import com.denisardent.domain.LoginUseCase
 import com.denisardent.presentation.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class AuthorizationFragment: Fragment(R.layout.fragment_authorization) {
@@ -93,7 +87,9 @@ class AuthorizationFragment: Fragment(R.layout.fragment_authorization) {
 
 
     fun startMain(){
-        startActivity(Intent(requireContext(), Class.forName("com.denisardent.testcase.MainActivity")))
+        val intent = Intent(requireContext(), Class.forName("com.denisardent.testcase.MainActivity"))
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 }
 

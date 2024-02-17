@@ -42,5 +42,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.datastore)
     implementation(libs.hilt.android)
+    implementation(project(":common"))
     kapt(libs.hilt.android.compiler)
 }

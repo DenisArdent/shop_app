@@ -3,6 +3,7 @@ package com.denisardent.local
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.denisardent.common.AccountInfo
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -25,6 +26,14 @@ class AccountProductSharedPref @Inject constructor(@ApplicationContext context: 
         return preferences.getBoolean(id, false)
     }
 
+    override fun getInfo(): AccountInfo {
+        return AccountInfo(
+            preferences.getString(NAME, "") ?: "",
+            preferences.getString(SURNAME, "") ?: "",
+            preferences.getString(PHONE_NUMBER, "") ?: ""
+        )
+    }
+
     override fun login(name: String, surName: String, phone: String){
         preferences.edit()
             .putString(NAME, name)
@@ -38,6 +47,7 @@ class AccountProductSharedPref @Inject constructor(@ApplicationContext context: 
             .remove(NAME)
             .remove(SURNAME)
             .remove(PHONE_NUMBER)
+            .apply()
     }
 
     override fun checkLogined(): Boolean {

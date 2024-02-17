@@ -1,6 +1,5 @@
 package com.denisardent.domain
 
-import android.util.Log
 import com.denisardent.common.Product
 import com.denisardent.local.ProductPreferences
 import com.denisardent.network.ProductsRepository
