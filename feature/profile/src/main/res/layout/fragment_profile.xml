@@ -34,6 +34,7 @@
             />
 
         <TextView
+            android:id="@+id/name_surname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
@@ -42,6 +43,7 @@
             />
 
         <TextView
+            android:id="@+id/phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -87,6 +89,7 @@
             />
 
         <TextView
+            android:id="@+id/liked_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

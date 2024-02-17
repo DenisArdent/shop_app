@@ -1,8 +1,6 @@
 package com.denisardent.product
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,7 +8,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.denisardent.common.Items.ImageItem
-import com.denisardent.common.Items.ListItem
 import com.denisardent.common.Product
 import com.denisardent.presentation.viewBinding
 import com.denisardent.product.databinding.FragmentProductBinding
@@ -106,6 +103,7 @@ class ProductFragment: Fragment(R.layout.fragment_product) {
                 characteristics3Start.text = characteristics[2].title
                 characteristics3End.text = characteristics[2].value
             } catch (_: Exception){ }
+            compositionDescription.text = product.ingredients
         }
     }
 }
