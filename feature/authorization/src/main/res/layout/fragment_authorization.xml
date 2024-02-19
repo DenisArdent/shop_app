@@ -13,6 +13,7 @@
         android:layout_marginBottom="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toTopOf="parent"
+        app:endIconMode="clear_text"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
         app:layout_constraintBottom_toTopOf="@id/surname_text_input"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,7 @@
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
         app:layout_constraintTop_toBottomOf="@id/name_text_input"
         app:layout_constraintBottom_toTopOf="@id/phone_text_input"
+        app:endIconMode="clear_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -53,6 +55,7 @@
             android:imeOptions="actionDone"
             android:maxLength="25"
             android:singleLine="true"
+
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,6 +66,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.9"
         android:layout_marginBottom="10dp"
+        app:endIconMode="clear_text"
         app:prefixText = "+7"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
